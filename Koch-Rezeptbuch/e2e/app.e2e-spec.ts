@@ -1,14 +1,16 @@
-import { KochRezeptbuchPage } from './app.po';
+import { VersuchPage } from './app.po';
 
-describe('koch-rezeptbuch App', () => {
-  let page: KochRezeptbuchPage;
+describe('versuch App', () => {
+  let page: VersuchPage;
 
   beforeEach(() => {
-    page = new KochRezeptbuchPage();
+    page = new VersuchPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display welcome message', done => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    page.getParagraphText()
+      .then(msg => expect(msg).toEqual('Welcome to app!!'))
+      .then(done, done.fail);
   });
 });
