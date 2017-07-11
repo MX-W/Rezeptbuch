@@ -6,12 +6,16 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { SideMenueComponent } from './menues/side-menue/side-menue.component';
 import { TopMenueComponent } from './menues/top-menue/top-menue.component';
+import { AroundcontentComponent } from './aroundcontent/aroundcontent.component';
+import { ContentComponent } from './content/content.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SideMenueComponent,
-    TopMenueComponent
+    TopMenueComponent,
+    AroundcontentComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,
