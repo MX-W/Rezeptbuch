@@ -8,6 +8,7 @@ import { SideMenueComponent } from './menues/side-menue/side-menue.component';
 import { TopMenueComponent } from './menues/top-menue/top-menue.component';
 import { AroundcontentComponent } from './aroundcontent/aroundcontent.component';
 import { ContentComponent } from './content/content.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ContentComponent } from './content/content.component';
     SideMenueComponent,
     TopMenueComponent,
     AroundcontentComponent,
-    ContentComponent
+    ContentComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
