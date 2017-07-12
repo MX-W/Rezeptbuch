@@ -1,4 +1,6 @@
 p{
-  background-color: crimson;
+  background-color: darkgreen;
+  color: whitesmoke;
   height: 500px; width: 500px;
+  font-weight: bold;
 }

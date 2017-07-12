@@ -9,6 +9,7 @@ import { TopMenueComponent } from './menues/top-menue/top-menue.component';
 import { AroundcontentComponent } from './aroundcontent/aroundcontent.component';
 import { ContentComponent } from './content/content.component';
 import { FooterComponent } from './footer/footer.component';
+import { AllaroundComponent } from './allaround/allaround.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FooterComponent } from './footer/footer.component';
     TopMenueComponent,
     AroundcontentComponent,
     ContentComponent,
-    FooterComponent
+    FooterComponent,
+    AllaroundComponent
   ],
   imports: [
     BrowserModule,
