@@ -10,6 +10,8 @@ import { AroundcontentComponent } from './aroundcontent/aroundcontent.component'
 import { ContentComponent } from './content/content.component';
 import { FooterComponent } from './footer/footer.component';
 import { AllaroundComponent } from './allaround/allaround.component';
+import {HttpService} from "../services/http.service";
+import {DataService} from "../services/data.service";
 
 @NgModule({
   declarations: [
@@ -26,7 +28,7 @@ import { AllaroundComponent } from './allaround/allaround.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [HttpService, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

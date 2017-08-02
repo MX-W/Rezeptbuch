@@ -3,40 +3,42 @@ import { Injectable } from '@angular/core';
 import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
 import {Observable} from 'rxjs/Observable';
-import {OriginFood} from '../interfaces/origin-food';
+import {OriginFoodList} from '../interfaces/origin-food-list';
 
 @Injectable()
 export class HttpService {
 
-  private _baseURL: string = 'http://api.nal.usda.gov/ndb/nutrients/?';
-  private format: string = 'format=json';
-  private apiKey: string = '&api_key=9wS8rVgVznjkXpqCbdmY5SgVy808hfnk18eBuv7N';
-  private _nutrient: string = '&nutrients=';
-  private idFruits: string = '0900';
-  private idVegetables: string = '1100';
-  private idKCAL: string = '208';
-  private idFatAcids : number = 605;
-  private idSaturatedFatAcids : number = 606;
-  private idFructose : number = 212;
-  private idGlucose : number = 211;
-  private idIron : number = 303;
-  private idLactose : number = 304;
-  private idProtein : number = 203;
-  private idSugar : number = 269;
-  private idVitaminB12 : number = 418;
-  private idVitaminC : number = 401;
-  private idWater : number = 255;
+  private _baseURL = 'http://api.nal.usda.gov/ndb/nutrients/?';
+  private format = 'format=json';
+  private apiKey = '&api_key=9wS8rVgVznjkXpqCbdmY5SgVy808hfnk18eBuv7N';
+  private abridgedList = '&subset=1';
+  private _nutrient = '&nutrients=';
+  private idFruits = '0900';
+  private idVegetables = '1100';
+  private idKCAL = '208';
+  private idFatAcids = 605;
+  private idSaturatedFatAcids = 606;
+  private idFructose = 212;
+  private idGlucose = 211;
+  private idIron = 303;
+  private idLactose = 304;
+  private idProtein = 203;
+  private idSugar = 269;
+  private idVitaminB12 = 418;
+  private idVitaminC = 401;
+  private idWater = 255;
 
   constructor( private http: Http) {
 
   }
 
   getFoodURL() {
-    return this._baseURL + this.format + this.apiKey + '&fg=' + this.idFruits + '&fg=' + this.idVegetables + this._nutrient + this.idKCAL;
+    return this._baseURL + this.format + this.apiKey + this.abridgedList + '&fg=' + this.idFruits
+      + '&fg=' + this.idVegetables + this._nutrient + this.idKCAL;
   }
 
-  sendRequest(endpoint: string) : Observable<OriginFood> {
-    return this.http.get(endpoint).map((response) => response.json());
+  sendRequest(endpoint: string): Observable<OriginFoodList> {
+    return this.http.get(endpoint).map((response) => response.json().report.foods);
   }
 }
 

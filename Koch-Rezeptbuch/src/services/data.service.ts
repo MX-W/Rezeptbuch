@@ -1,8 +1,9 @@
 
 import {HttpService} from './http.service';
-import {OriginFood} from '../interfaces/origin-food';
-import {Food} from '../model/food';
+import {OriginFoodList} from '../interfaces/origin-food-list';
+import {FoodList} from '../model/food-list';
 import {Injectable} from '@angular/core';
+import {Observable} from "rxjs/Observable";
 /**
  * Created by Max on 12.07.2017.
  */
@@ -13,8 +14,8 @@ export class DataService {
 
   }
 
-  getData() {
+  getData(): Observable<FoodList> {
     return this.http.sendRequest(this.http.getFoodURL())
-      .map((originFood: OriginFood) => new Food(originFood));
+      .map((originFood: OriginFoodList) => new FoodList(originFood));
   }
 }
