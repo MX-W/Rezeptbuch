@@ -6,27 +6,31 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { SideMenueComponent } from './menues/side-menue/side-menue.component';
 import { TopMenueComponent } from './menues/top-menue/top-menue.component';
-import { AroundcontentComponent } from './aroundcontent/aroundcontent.component';
-import { ContentComponent } from './content/content.component';
+import {IngredientsComponent} from './ingredients/ingredients.component';
 import { FooterComponent } from './footer/footer.component';
-import { AllaroundComponent } from './allaround/allaround.component';
+import {LayoutComponent} from './layout/layout.component';
 import {HttpService} from "../services/http.service";
 import {DataService} from "../services/data.service";
+import { RecipeComponent } from './recipe/recipe.component';
+import { LoginComponent } from './login/login.component';
+import {routing} from "./app.routing";
 
 @NgModule({
   declarations: [
     AppComponent,
     SideMenueComponent,
     TopMenueComponent,
-    AroundcontentComponent,
-    ContentComponent,
+    IngredientsComponent,
     FooterComponent,
-    AllaroundComponent
+    LayoutComponent,
+    RecipeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    routing
   ],
   providers: [HttpService, DataService],
   bootstrap: [AppComponent]

@@ -3,11 +3,11 @@ import {DataService} from "../../services/data.service";
 import {FoodList} from "../../model/food-list";
 
 @Component({
-  selector: 'app-content',
-  templateUrl: './content.component.html',
-  styleUrls: ['./content.component.css']
+  selector: 'app-ingredients',
+  templateUrl: './ingredients.component.html',
+  styleUrls: ['./ingredients.component.css']
 })
-export class ContentComponent implements OnInit {
+export class IngredientsComponent implements OnInit {
 
   private foodEntries = this.dataService.getData();
 
