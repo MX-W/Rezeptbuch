@@ -14,8 +14,7 @@ export class ContentComponent implements OnInit {
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    // this.dataService.getData.subscribe((foodList: FoodList) => this.foodEntries = foodList,
-      // error => console.log(error));
+    //this.dataService.getData().subscribe(data => console.log(data));
   }
 
 }

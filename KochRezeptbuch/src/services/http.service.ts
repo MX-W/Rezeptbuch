@@ -12,6 +12,7 @@ export class HttpService {
   private format = 'format=json';
   private apiKey = '&api_key=9wS8rVgVznjkXpqCbdmY5SgVy808hfnk18eBuv7N';
   private abridgedList = '&subset=1';
+  private measureByGrams = '&measureby=g';
   private _nutrient = '&nutrients=';
   private idFruits = '0900';
   private idVegetables = '1100';
@@ -34,7 +35,7 @@ export class HttpService {
 
   getFoodURL() {
     return this._baseURL + this.format + this.apiKey + this.abridgedList + '&fg=' + this.idFruits
-      + '&fg=' + this.idVegetables + this._nutrient + this.idKCAL;
+      + this._nutrient + this.idKCAL + this.measureByGrams;
   }
 
   sendRequest(endpoint: string): Observable<OriginFoodList> {
