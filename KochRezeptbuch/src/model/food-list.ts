@@ -7,6 +7,5 @@ export class FoodList {
   constructor(
     public origin: OriginFoodList
   ) {
-
   }
 }

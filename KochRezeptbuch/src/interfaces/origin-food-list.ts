@@ -3,5 +3,5 @@
  */
 
 export interface OriginFoodList {
-  name : string;
+  origin: any[];
 }

@@ -14,8 +14,13 @@ export class DataService {
 
   }
 
-  getData(): Observable<FoodList> {
-    return this.http.sendRequest(this.http.getFoodURL())
-      .map((originFood: OriginFoodList) => new FoodList(originFood));
+  getData(categoryToCatch: string) {
+    if (categoryToCatch === 'fruit'){
+      return this.http.sendRequest(1);
+    }else if (categoryToCatch === 'vegetable') {
+      return this.http.sendRequest(2);
+    }else if (categoryToCatch === 'animal') {
+      return this.http.sendRequest(3);
+    }
   }
 }

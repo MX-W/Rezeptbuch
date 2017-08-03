@@ -9,12 +9,19 @@ import {FoodList} from "../../model/food-list";
 })
 export class IngredientsComponent implements OnInit {
 
-  private foodEntries = this.dataService.getData();
+  // private result = this.dataService.getData();
+  private fruitEntries;
+  private veggieEntries;
+  private animalEntries;
+
 
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    //this.dataService.getData().subscribe(data => console.log(data));
+    this.dataService.getData('fruit').subscribe((data) => console.log(data));
+    console.log(this.fruitEntries);
+    // this.dataService.getData('vegetable').subscribe((data) => this.veggieEntries = data);
+    // this.dataService.getData('animal').subscribe((data) => this.animalEntries = data);
   }
 
 }
