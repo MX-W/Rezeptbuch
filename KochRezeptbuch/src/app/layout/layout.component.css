@@ -1,4 +1,13 @@
 div{
-  display: flex;
-  justify-content: center;
+  /*display: flex;
+  justify-content: center;*/
+}
+
+.wrapper{
+  background-color: darkgreen;
+  color: whitesmoke;
+  height: 700px; width: 700px;
+  font-weight: bold;
+  padding: 3%;
+  margin: auto;
 }
