@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from "../../services/data.service";
-import {FoodList} from "../../model/food-list";
+import 'rxjs/add/operator/map';
+import {Food} from "../../model/food";
 
 @Component({
   selector: 'app-ingredients',
@@ -10,7 +11,7 @@ import {FoodList} from "../../model/food-list";
 export class IngredientsComponent implements OnInit {
 
   // private result = this.dataService.getData();
-  private fruitEntries;
+  private fruitEntries: Food[] = [];
   private veggieEntries;
   private animalEntries;
 
@@ -18,7 +19,11 @@ export class IngredientsComponent implements OnInit {
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    this.dataService.getData('fruit').subscribe((data) => console.log(data));
+    this.dataService.getData('fruit').subscribe((data : Food[]) => {
+      for (let key in data) {
+        this.fruitEntries.push(data[key]);
+      }
+    });
     console.log(this.fruitEntries);
     // this.dataService.getData('vegetable').subscribe((data) => this.veggieEntries = data);
     // this.dataService.getData('animal').subscribe((data) => this.animalEntries = data);

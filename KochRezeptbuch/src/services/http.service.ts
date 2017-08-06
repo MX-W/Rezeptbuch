@@ -3,7 +3,8 @@ import { Injectable } from '@angular/core';
 import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
 import {Observable} from 'rxjs/Observable';
-import {OriginFoodList} from '../interfaces/origin-food-list';
+import {OriginFood} from '../interfaces/origin-food-list';
+import {Food} from "../model/food";
 
 @Injectable()
 export class HttpService {
@@ -29,7 +30,7 @@ export class HttpService {
     return this.foodURL;
   }
 
-  sendRequest(requestID: number) {
-    return this.http.get(this.getFoodURL(requestID)).map((response) => response.json());
+  sendRequest(endpoint: string) {
+    return this.http.get(endpoint).map((response) => response.json());
   }
 }
