@@ -6,33 +6,31 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { SideMenueComponent } from './menues/side-menue/side-menue.component';
 import { TopMenueComponent } from './menues/top-menue/top-menue.component';
-import {IngredientsComponent} from './ingredients/ingredients.component';
 import { FooterComponent } from './footer/footer.component';
 import {LayoutComponent} from './layout/layout.component';
 import {HttpService} from '../services/http.service';
 import {DataService} from '../services/data.service';
-import { RecipeComponent } from './recipe/recipe.component';
+import { IngredientComponent } from './ingredient/ingredient.component';
 import { LoginComponent } from './login/login.component';
 import {routing} from './app.routing';
 import {RecipesComponent} from "./recipes/recipes.component";
-import {RecipeListComponent} from "./recipe/recipe-list/recipe-list.component";
-import {RecipeItemComponent} from "./recipe/recipe-list/recipe-item.component";
-import {RecipeDetailComponent} from "./recipe/recipe-detail/recipe-detail.component";
+import {IngredientListComponent} from "./ingredient/ingredient-list/ingredient-list.component";
+import {IngredientItemComponent} from "./ingredient/ingredient-list/ingredient-item.component";
+import {IngredientDetailComponent} from "./ingredient/ingredient-detail/ingredient-detail.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     SideMenueComponent,
     TopMenueComponent,
-    IngredientsComponent,
     FooterComponent,
     LayoutComponent,
-    RecipeComponent,
+    IngredientComponent,
     LoginComponent,
     RecipesComponent,
-    RecipeListComponent,
-    RecipeItemComponent,
-    RecipeDetailComponent
+    IngredientListComponent,
+    IngredientItemComponent,
+    IngredientDetailComponent
   ],
   imports: [
     BrowserModule,
