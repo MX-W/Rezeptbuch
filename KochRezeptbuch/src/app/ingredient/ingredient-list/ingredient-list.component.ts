@@ -3,9 +3,10 @@ import {IngredientService} from "../../../services/ingredients.service";
 import {Food} from "../../../model/food";
 
 @Component({
-  selector: 'app-recipe-list',
+  selector: 'app-ingredient-list',
   templateUrl: './ingredient-list.component.html',
-  styles: []
+  styles: [],
+  providers: [IngredientService]
 })
 export class IngredientListComponent implements OnInit {
   fruitEntries : Food[] = [];
@@ -13,11 +14,12 @@ export class IngredientListComponent implements OnInit {
   constructor(private ingredientService: IngredientService) { }
 
   ngOnInit() {
-    this.ingredientService.getFruitEntries().subscribe((data : Food[]) => {
-      for (let key in data) {
-        this.fruitEntries.push(data[key]);
+    this.ingredientService.getFruitEntries().subscribe(
+      (food: Food[]) => {
+        for(let key in food) {
+          this.fruitEntries.push(food[key]);
+        }
       }
-    });
-    console.log(this.fruitEntries);
+    );
   }
 }

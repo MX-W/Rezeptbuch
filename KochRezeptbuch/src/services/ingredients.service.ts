@@ -7,7 +7,8 @@ export class IngredientService {
 
   ingredientSelected = new EventEmitter<Food>();
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService) {
+  }
 
     // this.dataService.getData('vegetable').subscribe((data) => this.veggieEntries = data);
     // this.dataService.getData('animal').subscribe((data) => this.animalEntries = data);

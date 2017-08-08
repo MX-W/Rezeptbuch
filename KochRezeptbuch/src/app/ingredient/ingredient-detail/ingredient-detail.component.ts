@@ -3,7 +3,7 @@ import {IngredientService} from "../../../services/ingredients.service";
 import {Food} from "../../../model/food";
 
 @Component({
-  selector: 'app-recipe-detail',
+  selector: 'app-ingredient-detail',
   templateUrl: './ingredient-detail.component.html',
   styles: []
 })

@@ -1,4 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+*
+{
+  box-sizing: border-box;
+}
+
 body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
   background-image: url(http://image.gala.de/21333692/uncropped-0-0/b4582d5dd2ec00592d1c66099ec008c8/zI/obst.jpg);
 }
