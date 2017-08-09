@@ -1,0 +1,18 @@
+<div class="list-group-item clearfix food">
+
+  <div class="pull-left">
+    <h4 class="list-group-item-heading">{{ingredient.name}}</h4>
+  </div>
+
+  <div class="pull-right">
+    <img [src]="ingredient.picture" alt="bild" class="img-responsive" style="max-height: 50px;">
+  </div>
+
+  <table>
+    <tr>
+      <td><label for="amount">Menge:</label></td>
+      <td><input type="number" class="" value="1" id="amount" min="1" max="100" ng-change="valueChanged(amount.value)" #amount/></td>
+    </tr>
+  </table>
+
+</div>

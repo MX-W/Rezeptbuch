@@ -27,7 +27,6 @@ export class IngredientDraglistComponent implements OnInit {
     dragulaService.drag.subscribe((value) => {
     });*/
     dragulaService.drop.subscribe((value) => {
-      console.log(this.midArray);
     });
   }
 
