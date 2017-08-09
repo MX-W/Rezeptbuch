@@ -5,7 +5,7 @@ import {Food} from "../../../model/food";
 @Component({
   selector: 'app-ingredient-detail',
   templateUrl: './ingredient-detail.component.html',
-  styles: []
+  styles: [ ]
 })
 export class IngredientDetailComponent implements OnInit {
   selectedIngredient: Food;

@@ -1,8 +1,15 @@
-
-<div class="row">
-  <div class="col-xs-12">
-    <ul class="list-group">
-      <app-ingredient-dragitem *ngFor="let food of fruitEntries" [ingredient]="food"></app-ingredient-dragitem>
-    </ul>
+<div class="pull-left col-xs-6" [dragula]="bag-one" [dragulaModel]="midArray">
+  <div>
+    Mittelteil
   </div>
 </div>
+<div class="pull-right col-xs-6" [dragula]="bag-tow" [dragulaModel]="foodEntries">
+    <div class="col-xs-12">
+      <ul class="list-group">
+        <app-ingredient-dragitem *ngFor="let food of foodEntries" [ingredient]="food"></app-ingredient-dragitem>
+      </ul>
+    </div>
+</div>
+
+
+

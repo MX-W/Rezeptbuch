@@ -21,6 +21,7 @@ import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component
 import { IngredientDragdropComponent } from './recipes/ingredient-dragdrop/ingredient-dragdrop.component';
 import { IngredientDraglistComponent } from './recipes/ingredient-dragdrop/drag-list/ingredient-draglist.component';
 import { IngredientDragitemComponent } from './recipes/ingredient-dragdrop/drag-list/ingredient-dragitem.component';
+import {DragulaModule} from "ng2-dragula";
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { IngredientDragitemComponent } from './recipes/ingredient-dragdrop/drag-
     BrowserModule,
     FormsModule,
     HttpModule,
-    routing
+    routing,
+    DragulaModule
   ],
   providers: [HttpService, DataService],
   bootstrap: [AppComponent]

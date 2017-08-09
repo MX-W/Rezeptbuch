@@ -5,9 +5,9 @@ import {LoginComponent} from "./login/login.component";
 import {IngredientComponent} from "./ingredient/ingredient.component";
 
 const APP_ROUTES: Routes = [
-  { path: '', component: IngredientComponent },
   { path: 'recipes', component: RecipesComponent},
-  { path: 'login', component: LoginComponent}
+  { path: 'login', component: LoginComponent},
+  { path: ':kind', component: IngredientComponent }
 ];
 
 export const routing = RouterModule.forRoot(APP_ROUTES);

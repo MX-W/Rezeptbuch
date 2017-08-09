@@ -17,4 +17,12 @@ export class IngredientService {
     return this.dataService.getData('fruit');
   }
 
+  getVeggieEntries() {
+    return this.dataService.getData('vegetable');
+  }
+
+  getAnimalEntries() {
+    return this.dataService.getData('animal');
+  }
+
 }

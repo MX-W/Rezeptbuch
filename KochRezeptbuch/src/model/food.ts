@@ -16,7 +16,7 @@ export class Food {
     public vitaminb12 : number,
     public vitaminb2 : number,
     public vitaminc : number,
-    public pic : string
+    public picture : string
   ) {
   }
 }
