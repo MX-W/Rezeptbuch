@@ -1,26 +1,59 @@
-<div class="row">
-  <div class="col-xs-12">
+<div *ngIf="switch; else elseBlock">
+  <div class="row">
+    <div class="col-xs-12">
 
-    <img src="{{ selectedIngredient?.picture }}" alt="" class="img-responsive">
+      <img src="{{ selectedIngredient?.picture }}" alt="" class="img-responsive">
 
+    </div>
   </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+
+      <h1>{{ selectedIngredient?.name}}</h1>
+
+    </div>
+  </div>
+
+  <hr>
+
+  <p>
+    Angaben in g/100g
+  </p>
+  <table>
+    <tr>
+      <td>Kohlenhydrate:</td>
+      <td>{{ selectedIngredient?.carb }} g</td>
+    </tr>
+    <tr>
+      <td>Energie:</td>
+      <td>{{ selectedIngredient?.energy }} kcal</td>
+    </tr>
+    <tr>
+      <td>Fett:</td>
+      <td>{{ selectedIngredient?.fat }} g</td>
+    </tr>
+    <tr>
+      <td>Eiweiß:</td>
+      <td>{{ selectedIngredient?.protein }} g</td>
+    </tr>
+    <tr>
+      <td>Ballaststoffe:</td>
+      <td>{{ selectedIngredient?.ruffage }} g</td>
+    </tr>
+    <tr>
+      <td>Salz:</td>
+      <td>{{ selectedIngredient?.salt }} g</td>
+    </tr>
+    <tr>
+      <td>Vitamin B6:</td>
+      <td>{{ selectedIngredient?.vitaminb6 }} mg</td>
+    </tr>
+    <tr>
+      <td>Vitamin C:</td>
+      <td>{{ selectedIngredient?.vitaminc }} mg</td>
+    </tr>
+  </table>
 </div>
 
-<div class="row">
-  <div class="col-xs-12">
-
-    <h1>{{ selectedIngredient?.name}}</h1>
-
-  </div>
-</div>
-
-<hr>
-
-
-<div class="row">
-  <div class="col-xs-12">
-
-    <p>{{ selectedIngredient?.energy}} kcal</p>
-
-  </div>
-</div>
+<ng-template elseBlock>Bitte zuerst ein Objekt aus der Liste links wählen.</ng-template>

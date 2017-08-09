@@ -13,8 +13,7 @@ export class Food {
     public ruffage : number,
     public salt : number,
     public sugar : number,
-    public vitaminb12 : number,
-    public vitaminb2 : number,
+    public vitaminb6 : number,
     public vitaminc : number,
     public picture : string
   ) {

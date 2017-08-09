@@ -37,8 +37,7 @@ export class DataService {
         response[key].ruffage,
         response[key].salt,
         response[key].sugar,
-        response[key].vitaminb12,
-        response[key].vitaminb2,
+        response[key].vitaminb6,
         response[key].vitaminc,
         response[key].picture
       ));
