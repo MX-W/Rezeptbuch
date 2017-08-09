@@ -10,7 +10,6 @@ import { FooterComponent } from './footer/footer.component';
 import {LayoutComponent} from './layout/layout.component';
 import {HttpService} from '../services/http.service';
 import {DataService} from '../services/data.service';
-import { IngredientComponent } from './ingredient/ingredient.component';
 import { LoginComponent } from './login/login.component';
 import {routing} from './app.routing';
 import {RecipesComponent} from "./recipes/recipes.component";
@@ -22,6 +21,7 @@ import { IngredientDragdropComponent } from './recipes/ingredient-dragdrop/ingre
 import { IngredientDraglistComponent } from './recipes/ingredient-dragdrop/drag-list/ingredient-draglist.component';
 import { IngredientDragitemComponent } from './recipes/ingredient-dragdrop/drag-list/ingredient-dragitem.component';
 import {DragulaModule} from "ng2-dragula";
+import {IngredientComponent} from "./ingredient/ingredient.component";
 
 @NgModule({
   declarations: [
@@ -30,7 +30,6 @@ import {DragulaModule} from "ng2-dragula";
     TopMenueComponent,
     FooterComponent,
     LayoutComponent,
-    IngredientComponent,
     LoginComponent,
     RecipesComponent,
     IngredientListComponent,
@@ -39,7 +38,8 @@ import {DragulaModule} from "ng2-dragula";
     RecipeListComponent,
     IngredientDragdropComponent,
     IngredientDraglistComponent,
-    IngredientDragitemComponent
+    IngredientDragitemComponent,
+    IngredientComponent
   ],
   imports: [
     BrowserModule,

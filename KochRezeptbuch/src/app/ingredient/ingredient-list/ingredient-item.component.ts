@@ -5,7 +5,11 @@ import {Food} from "../../../model/food";
 @Component({
   selector: 'app-ingredient-item',
   templateUrl: './ingredient-item.component.html',
-  styles: []
+  styles: [`
+    .item {
+      cursor: pointer;
+    }
+  `]
 })
 export class IngredientItemComponent implements OnInit {
   @Input() ingredient: Food;
