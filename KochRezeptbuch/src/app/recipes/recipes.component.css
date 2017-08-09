@@ -1,0 +1,5 @@
+.recipes {
+  overflow: auto;
+  max-height:100%;
+  height: 700px;
+}

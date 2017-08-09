@@ -4,7 +4,11 @@ import {Food} from "../../../../model/food";
 @Component({
   selector: 'app-ingredient-dragitem',
   templateUrl: './ingredient-dragitem.component.html',
-  styles: []
+  styles: [`
+  .food {
+    cursor: pointer;
+  }
+  `]
 })
 export class IngredientDragitemComponent implements OnInit {
 

@@ -6,11 +6,10 @@ import {DragulaService} from "ng2-dragula";
 @Component({
   selector: 'app-ingredient-draglist',
   templateUrl: './ingredient-draglist.component.html',
-  styles: [`
-    .pull-left, .pull-right{
-      margin-top: 15px;
-    }
-  `],
+  styleUrls: [
+    './ingredient-draglist.component.css',
+    '../../../../../node_modules/dragula/dist/dragula.css'
+  ],
   providers: [IngredientService]
 })
 export class IngredientDraglistComponent implements OnInit {
@@ -19,7 +18,18 @@ export class IngredientDraglistComponent implements OnInit {
 
   private midArray: Food[] = [];
 
-  constructor(private ingredientService: IngredientService, private dragula: DragulaService) { }
+  constructor(private ingredientService: IngredientService,
+              private dragulaService: DragulaService) {
+    /*dragulaService.setOptions('bag-one', {
+      removeOnSpill: true
+    });
+
+    dragulaService.drag.subscribe((value) => {
+    });*/
+    dragulaService.drop.subscribe((value) => {
+      console.log(this.midArray);
+    });
+  }
 
   ngOnInit() {
     this.ingredientService.getFruitEntries().subscribe((food: Food[]) => {
