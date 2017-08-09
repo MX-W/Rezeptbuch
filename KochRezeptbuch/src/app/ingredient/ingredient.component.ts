@@ -10,9 +10,7 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class IngredientComponent implements OnInit {
 
-  constructor(
-
-  ) { }
+  constructor(private ingredienService: IngredientService) { }
 
   ngOnInit() {
 
