@@ -1,7 +1,12 @@
 ul.nav {
-  background-color: lightblue;
+  background-color: green;
 }
 .mynav {
   padding: 5px;
   margin: 10px;
+  width: 120px;
+}
+
+a{
+  color: white;
 }
