@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Food} from "../../../../model/food";
+import {Food} from '../../../model/food';
 
 @Component({
   selector: 'app-ingredient-dropitem',
@@ -11,7 +11,11 @@ import {Food} from "../../../../model/food";
     
     td {
       padding: 5px;
-    }    
+    } 
+    
+    #amount {
+      max-width: 50px;
+    }
   `]
 })
 export class IngredientDropitemComponent implements OnInit {

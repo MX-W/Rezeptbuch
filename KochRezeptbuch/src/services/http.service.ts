@@ -26,6 +26,10 @@ export class HttpService {
       this.foodURL += 'Gemuese.json';
     }else if (requestID === 3) {
       this.foodURL += 'Tierische%20Lebensmittel.json';
+    } else if (requestID === 4) {
+      this.foodURL += 'Gerichte.json';
+    } else {
+      console.log('Falsche ID übergeben, URL konnte nicht erzeugt werden.')
     }
     return this.foodURL;
   }

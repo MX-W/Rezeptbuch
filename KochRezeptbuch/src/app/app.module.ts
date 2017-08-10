@@ -17,11 +17,13 @@ import {IngredientListComponent} from "./ingredient/ingredient-list/ingredient-l
 import {IngredientItemComponent} from "./ingredient/ingredient-list/ingredient-item.component";
 import {IngredientDetailComponent} from "./ingredient/ingredient-detail/ingredient-detail.component";
 import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
-import { IngredientDraglistComponent } from './recipes/ingredient-dragdrop/drag-list/ingredient-draglist.component';
-import { IngredientDragitemComponent } from './recipes/ingredient-dragdrop/drag-list/ingredient-dragitem.component';
+import { IngredientDraglistComponent } from './recipes/drag-list/ingredient-draglist.component';
+import { IngredientDragitemComponent } from './recipes/drag-list/ingredient-dragitem.component';
 import {DragulaModule} from "ng2-dragula";
 import {IngredientComponent} from "./ingredient/ingredient.component";
-import { IngredientDropitemComponent } from './recipes/ingredient-dragdrop/drag-list/ingredient-dropitem.component';
+import { IngredientDropitemComponent } from './recipes/drag-list/ingredient-dropitem.component';
+import { RecipeItemComponent } from './recipes/recipe-list/recipe-item.component';
+import {IngredientService} from "../services/ingredients.service";
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import { IngredientDropitemComponent } from './recipes/ingredient-dragdrop/drag-
     IngredientDraglistComponent,
     IngredientDragitemComponent,
     IngredientComponent,
-    IngredientDropitemComponent
+    IngredientDropitemComponent,
+    RecipeItemComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +51,7 @@ import { IngredientDropitemComponent } from './recipes/ingredient-dragdrop/drag-
     routing,
     DragulaModule
   ],
-  providers: [HttpService, DataService],
+  providers: [HttpService, DataService, IngredientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

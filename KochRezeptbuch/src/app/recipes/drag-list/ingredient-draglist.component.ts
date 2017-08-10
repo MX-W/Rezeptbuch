@@ -1,16 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import {IngredientService} from "../../../../services/ingredients.service";
-import {Food} from "../../../../model/food";
-import {DragulaService} from "ng2-dragula";
+import {Component, OnInit} from '@angular/core';
+import {IngredientService} from '../../../services/ingredients.service';
+import {Food} from '../../../model/food';
+import {DragulaService} from 'ng2-dragula';
 
 @Component({
   selector: 'app-ingredient-draglist',
   templateUrl: './ingredient-draglist.component.html',
   styleUrls: [
     './ingredient-draglist.component.css',
-    '../../../../../node_modules/dragula/dist/dragula.css'
+    '../../../../node_modules/dragula/dist/dragula.css'
   ],
-  providers: [IngredientService]
+  providers: []
 })
 export class IngredientDraglistComponent implements OnInit {
 
@@ -20,14 +20,9 @@ export class IngredientDraglistComponent implements OnInit {
 
   constructor(private ingredientService: IngredientService,
               private dragulaService: DragulaService) {
-    /*dragulaService.setOptions('bag-one', {
-      removeOnSpill: true
-    });
-
-    dragulaService.drag.subscribe((value) => {
-    });*/
-    dragulaService.drop.subscribe((value) => {
-    });
+      dragulaService.drop.subscribe(
+          this.ingredientService.ingredientInRecipeCheck.emit(this.midArray)
+      );
   }
 
   ngOnInit() {
