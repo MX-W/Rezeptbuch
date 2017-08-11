@@ -32,7 +32,6 @@ export class IngredientDraglistComponent implements OnInit {
      */
     dragulaService.drop.subscribe((value) => {
       this.ingredientService.ingredientArrayInDrop.emit(this.midArray);
-      this.ingredientService.newIngredientInDrop.emit(this.midArray[this.midArray.length - 1]);
       this.dropEmpty = false;
     })
     ;

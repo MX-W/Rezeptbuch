@@ -29,16 +29,21 @@ export class RecipeSummationNutrientsComponent implements OnInit {
 
     // Jedes mal wenn eine neue Zutat in die Mitte gezogen wird bekommt die Component sie hier übergeben
     // und die Anzeige aktualisiert
-    this.ingredientService.newIngredientInDrop.subscribe((food: Food) => {
-        this.arrayInDrop.push(food);
+    this.ingredientService.ingredientArrayInDrop.subscribe((food: Food[]) => {
+        this.arrayInDrop = [];
+        for( let key in food) {
+          this.arrayInDrop.push(food[key]);
+        }
         this.sumUpNutrients();
+        console.log(this.arrayInDrop);
       },
       (error) => console.log(error));
 
     // Sobald die Menge einer Zutat geändert wird, wird sie im Foodeintrag aktualisiert sowie die Anzeige aktualisiert.
     this.ingredientService.amountIsChanged.subscribe((data: Food) => {
+
         for (let food in this.arrayInDrop) {
-          if (this.arrayInDrop[food].name = data.name) {
+          if (this.arrayInDrop[food].name === data.name) {
             this.arrayInDrop[food].amount = data.amount;
             this.sumUpNutrients();
           }

@@ -35,7 +35,5 @@ export class RecipeListComponent implements OnInit {
       },
       (error) => console.log(error));
 
-
   }
-
 }

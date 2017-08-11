@@ -12,11 +12,8 @@ export class IngredientService {
 
   ingredientArrayInDrop = new EventEmitter<Food[]>();   // EventEmitter für Array von Zutaten im Drop-Bereich.
                                                         // Wird benötigt für Feststellung ob ein Rezept vorhanden ist,
-                                                        // in dem eine der Zutaten enthalten ist.
-
-  newIngredientInDrop = new EventEmitter<Food>();       // EventEmitter wenn eine neue Zutat im Drop-Bereich abgelegt
-                                                        // wird. Wird benötigt um die Gesamtanzeige der Nährstoffe
-                                                        // zu informieren, dass ein zusätzliches Element vorliegt.
+                                                        // in dem eine der Zutaten enthalten ist und um die Zutatenliste
+                                                        // für das Erstellen eines neuen Rezeptes zu übergeben.
 
   amountIsChanged = new EventEmitter<Food>();   // EventEmitter falls die Menge einer Zutat verändert wird.
                                                 // Wird benötigt um festzustellen, wann die Menge erhöht wird und

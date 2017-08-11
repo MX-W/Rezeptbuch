@@ -1,5 +1,5 @@
 <div class="pull-left col-xs-5 drop-list">
-  <div class="alert-danger" *ngIf="dropEmpty">
+  <div class="alert-danger default-text" *ngIf="dropEmpty">
     Füge Zutaten per Drag and Drop hier ein.
   </div>
   <ul class="drop" [dragula]='"bag-one"' [dragulaModel]='midArray' [attr.data-id]="midArray.name">

@@ -11,7 +11,6 @@ export class RecipeService {
 
   recipeSelected = new EventEmitter<Recipe>();    // EventEmitter für gelicktes recipe-item in recipe-list
 
-
   constructor(private dataService: DataService) {
   }
 
