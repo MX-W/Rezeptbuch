@@ -21,16 +21,15 @@ export class IngredientListComponent implements OnInit, OnDestroy {
 
   foodEntries: Food[] = [];
 
-  constructor(
-    private ingredientService: IngredientService,
-    private activatedRoute: ActivatedRoute
-  ) { }
+  constructor(private ingredientService: IngredientService,
+              private activatedRoute: ActivatedRoute) {
+  }
 
   ngOnInit() {
-   this. subscription = this.activatedRoute.params.subscribe(     // Um festzustellen, welcher Pfad im Top-Menü
-      (params: Params) => this.loadContent(params['kind'])        // gewählt ist und entsprechenden Inhalt zu laden.
+    this.subscription = this.activatedRoute.params.subscribe(     // Um festzustellen, welcher Pfad im Top-Menü
+      (params: Params) => this.loadContent(params['kind']),       // gewählt ist und entsprechenden Inhalt zu laden.
+      (error) => console.log(error)
     );
-
 
 
   }
@@ -40,26 +39,29 @@ export class IngredientListComponent implements OnInit, OnDestroy {
     if (kind === 'Obst') {
       this.ingredientService.getFruitEntries().subscribe(
         (food: Food[]) => {
-          for(let key in food) {                                // Übertragung des erhaltenen Arrays in lokale Variable
+          for (let key in food) {                                // Übertragung des erhaltenen Arrays in lokale Variable
             this.foodEntries.push(food[key]);
           }
-        }
+        },
+        (error) => console.log(error)
       );
-    }else if (kind === 'Gemüse') {
+    } else if (kind === 'Gemüse') {
       this.ingredientService.getVeggieEntries().subscribe(
         (food: Food[]) => {
-          for(let key in food) {
+          for (let key in food) {
             this.foodEntries.push(food[key]);
           }
-        }
+        },
+        (error) => console.log(error)
       );
     } else if (kind === 'Tierisch') {
       this.ingredientService.getAnimalEntries().subscribe(
         (food: Food[]) => {
-          for(let key in food) {
+          for (let key in food) {
             this.foodEntries.push(food[key]);
           }
-        }
+        },
+        (error) => console.log(error)
       );
     }
   }

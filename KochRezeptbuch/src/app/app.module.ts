@@ -18,14 +18,13 @@ import {IngredientItemComponent} from "./ingredient/ingredient-list/ingredient-i
 import {IngredientDetailComponent} from "./ingredient/ingredient-detail/ingredient-detail.component";
 import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
 import { IngredientDraglistComponent } from './recipes/drag-list/ingredient-draglist.component';
-import { IngredientDragitemComponent } from './recipes/drag-list/ingredient-dragitem.component';
+import { IngredientDragItemComponent } from './recipes/drag-list/ingredient-dragitem.component';
 import {DragulaModule} from "ng2-dragula";
 import {IngredientComponent} from "./ingredient/ingredient.component";
-import { IngredientDropitemComponent } from './recipes/drag-list/ingredient-dropitem.component';
+import { IngredientDropItemComponent } from './recipes/drag-list/ingredient-dropitem.component';
 import { RecipeItemComponent } from './recipes/recipe-list/recipe-item.component';
 import {IngredientService} from "../services/ingredients.service";
 import { RecipeDetailComponent } from './recipes/recipe-list/recipe-detail/recipe-detail.component';
-import {RecipeService} from "../services/recipe.service";
 import { RecipeSummationNutrientsComponent } from './recipes/recipe-summation-nutrients/recipe-summation-nutrients.component';
 
 @NgModule({
@@ -42,9 +41,9 @@ import { RecipeSummationNutrientsComponent } from './recipes/recipe-summation-nu
     IngredientDetailComponent,
     RecipeListComponent,
     IngredientDraglistComponent,
-    IngredientDragitemComponent,
+    IngredientDragItemComponent,
     IngredientComponent,
-    IngredientDropitemComponent,
+    IngredientDropItemComponent,
     RecipeItemComponent,
     RecipeDetailComponent,
     RecipeSummationNutrientsComponent
