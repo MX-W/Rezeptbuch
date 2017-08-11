@@ -1,10 +1,15 @@
-<div class="pull-left col-xs-5">
+<div class="pull-left col-xs-5 drop-list">
+  <div class="alert-danger" *ngIf="dropEmpty">
+    Füge Zutaten per Drag and Drop hier ein.
+  </div>
   <ul class="drop" [dragula]='"bag-one"' [dragulaModel]='midArray' [attr.data-id]="midArray.name">
     <app-ingredient-dropitem *ngFor="let food of midArray" [ingredient]="food"></app-ingredient-dropitem>
   </ul>
+
   <app-recipe-summation-nutrients></app-recipe-summation-nutrients>
+
 </div>
-<div class="pull-right col-xs-5 list">
+<div class="pull-right col-xs-5 drag-list">
   <ul class="list-group" [dragula]='"bag-one"' [dragulaModel]='foodEntries'>
     <app-ingredient-dragitem *ngFor="let food of foodEntries" [ingredient]="food"></app-ingredient-dragitem>
   </ul>

@@ -12,6 +12,7 @@ import {Food} from "../../../model/food";
   styles: [`
     .item {
       cursor: pointer;
+      margin-top: 5px;
     }
   `]
 })

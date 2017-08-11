@@ -1,5 +1,4 @@
-<div class="card">
-  <div class="card-body">
+<div class="card col-xs-3">
     <h4 class="card-title">Gesamte addierte Nährstoffe</h4>
     <h6 class="card-subtitle text-muted">
       Hier werden die Nährstoffe der in der Mitte abgelegten Zutaten aufaddiert
@@ -41,7 +40,5 @@
 
     <input type="text" placeholder="Rezeptname eingeben" #recipeName (focusout)="setRecipeName(recipeName.value)"/>
 
-    <button class="btn-success" (click)="recipeInDatabase()">Rezept speichern</button>
-
-  </div>
+    <button class="btn-success button" (click)="recipeInDatabase()">Rezept speichern</button>
 </div>

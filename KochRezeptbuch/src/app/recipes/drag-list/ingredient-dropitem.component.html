@@ -1,4 +1,4 @@
-<div class="list-group-item clearfix food">
+<div class="list-group-item clearfix food item">
 
   <div class="pull-left">
     <h4 class="list-group-item-heading">{{ingredient.name}}</h4>
@@ -15,6 +15,7 @@
         <input type="number"
                value="1"
                #amount
+               id="amount"
                min="1"
                max="100"
                (focusout)="valueChanged(amount.value)"
@@ -24,3 +25,5 @@
   </table>
 
 </div>
+
+
