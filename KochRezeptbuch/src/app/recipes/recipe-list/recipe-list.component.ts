@@ -14,28 +14,24 @@ export class RecipeListComponent implements OnInit {
 
   private recipeEntries: Recipe[] = [];
   private ingredientInMiddle: Food[] = [];
+  private recipeDisplay: Recipe[] = [];
 
   constructor(private ingredientService: IngredientService,
               private recipeService: RecipeService) {
-    console.log(this.recipeEntries);
   }
 
   ngOnInit() {
-    this.ingredientService.ingredientInRecipeCheck.subscribe((data: Food[]) => {
-        for (let key in data) {
-          this.ingredientInMiddle.push(data[key]);
-        }
-      }
-    );
-
     this.recipeService.getRecipeEntries().subscribe((data: Recipe[]) => {
       for (let key in data) {
         this.recipeEntries.push(data[key]);
       }
     });
 
-    this.recipeService.checkIngredientInRecipe(this.recipeEntries, this.ingredientInMiddle);
-    // weiterarbeiten!!
+    this.ingredientService.ingredientInRecipeCheck.subscribe((data) => {
+      this.recipeDisplay = this.recipeService.checkIngredientInRecipe(this.recipeEntries, data);
+    });
+
+
   }
 
 }
