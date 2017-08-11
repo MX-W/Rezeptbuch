@@ -1,5 +1,5 @@
 <div class="pull-left col-xs-5">
-  <ul class="drop" [dragula]='"bag-one"' [dragulaModel]='midArray'>
+  <ul class="drop" [dragula]='"bag-one"' [dragulaModel]='midArray' [attr.data-id]="midArray.name">
     <app-ingredient-dropitem *ngFor="let food of midArray" [ingredient]="food"></app-ingredient-dropitem>
   </ul>
 </div>

@@ -20,9 +20,10 @@ export class IngredientDraglistComponent implements OnInit {
 
   constructor(private ingredientService: IngredientService,
               private dragulaService: DragulaService) {
-      dragulaService.drop.subscribe(
-          this.ingredientService.ingredientInRecipeCheck.emit(this.midArray)
-      );
+    dragulaService.drop.subscribe((value) => {
+      this.ingredientService.ingredientInRecipeCheck.emit(this.midArray);
+    })
+    ;
   }
 
   ngOnInit() {
