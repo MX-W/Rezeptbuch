@@ -4,6 +4,10 @@ import {Food} from "../../../model/food";
 import {Subscription} from "rxjs/Subscription";
 import {ActivatedRoute, Params} from "@angular/router";
 
+
+/*
+  Diese Component wird geladen sobald ein Item in der ingredient-list gelickt wurde.
+ */
 @Component({
   selector: 'app-ingredient-detail',
   templateUrl: './ingredient-detail.component.html',
@@ -20,22 +24,23 @@ export class IngredientDetailComponent implements OnInit, OnDestroy {
               private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    this.ingredientService.ingredientSelected.subscribe(
-      (food: Food) => this.callback(food)
+    this.ingredientService.ingredientSelected.subscribe(        // Falls Food in Liste geklickt wurde wird Ingredient
+      (food: Food) => {                                         // zugewiesen und dadurch im Template angezeigt.
+        this.selectedIngredient = food;
+        this.switch = true;   // Einblenden des Templates von ngIf und nicht den default-else Text
+      },
+      (error) => console.log(error)
     );
-    this.subscription = this.activatedRoute.params.subscribe(
-      (params: Params) => {
+    this.subscription = this.activatedRoute.params.subscribe(   // Wenn sich die Route ändert wird wieder auf
+      (params: Params) => {                                     // default-Werte zurückgesetzt.
         this.selectedIngredient = null;
         this.switch = false;
-      });
-  }
-
-  callback(food: Food) {
-    this.selectedIngredient = food;
-    this.switch = true;
+      },
+      (error) => console.log(error)
+    );
   }
 
   ngOnDestroy() {
-    this.subscription.unsubscribe();
+    this.subscription.unsubscribe();        // Unsubscribe um stacken von Subscriptions zu unterbinden.
   }
 }

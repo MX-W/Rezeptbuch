@@ -43,7 +43,8 @@ export class DataService {
         response[key].sugar,
         response[key].vitaminb6,
         response[key].vitaminc,
-        response[key].picture
+        response[key].picture,
+        1
       ));
     }
     return returnArray;

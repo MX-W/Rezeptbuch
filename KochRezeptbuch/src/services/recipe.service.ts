@@ -8,6 +8,8 @@ export class RecipeService {
 
   recipeSelected = new EventEmitter<Recipe>();
 
+  amountIsChanged = new EventEmitter<Food>();
+
   constructor(private dataService: DataService) {
   }
 

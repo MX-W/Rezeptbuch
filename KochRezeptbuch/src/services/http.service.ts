@@ -1,10 +1,12 @@
 ///<reference path="../../node_modules/rxjs/add/operator/map.d.ts"/>
 import { Injectable } from '@angular/core';
-import {Http} from '@angular/http';
+import {Headers, Http} from '@angular/http';
 import 'rxjs/add/operator/map';
 import {Observable} from 'rxjs/Observable';
 import {OriginFood} from '../interfaces/origin-food-list';
 import {Food} from "../model/food";
+import {Recipe} from "../model/recipe";
+import {FoodRecipe} from "../model/food-recipe";
 
 @Injectable()
 export class HttpService {
@@ -36,5 +38,23 @@ export class HttpService {
 
   sendRequest(endpoint: string) {
     return this.http.get(endpoint).map((response) => response.json());
+  }
+
+  insertRecipe(ingredients: Food[], name: string) {
+    const body = JSON.stringify(this.getJSON(ingredients, name));
+    const headers = new Headers({'Content-Type': 'application/json'})
+    return this.http.post(this.getFoodURL(4), body, { headers: headers });
+  }
+
+  getJSON(ingredients: Food[], recipeName: string) {
+    const ingredientArray: FoodRecipe[] = [];
+    for (let key in ingredients) {
+      ingredientArray.push(new FoodRecipe(ingredients[key].name, ingredients[key].amount));
+    }
+    return {
+      name: recipeName,
+      picture: '',
+      ingredients: ingredientArray
+    };
   }
 }

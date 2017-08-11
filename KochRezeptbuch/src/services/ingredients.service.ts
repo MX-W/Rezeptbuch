@@ -6,7 +6,10 @@ import {Food} from "../model/food";
 export class IngredientService {
 
   ingredientSelected = new EventEmitter<Food>();
+
   ingredientArrayInDrop = new EventEmitter<Food[]>();
+
+  newIngredientInDrop = new EventEmitter<Food>();
 
   constructor(private dataService: DataService) {
   }

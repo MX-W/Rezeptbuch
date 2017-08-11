@@ -4,6 +4,11 @@ import {Food} from "../../../model/food";
 import {ActivatedRoute, Params} from "@angular/router";
 import {Subscription} from "rxjs/Subscription";
 
+
+/*
+ * Diese Component verwaltet die Liste in der die jeweiligen
+ * Nahrungsmittel angezeigt werden.
+ */
 @Component({
   selector: 'app-ingredient-list',
   templateUrl: './ingredient-list.component.html',
@@ -22,8 +27,8 @@ export class IngredientListComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
-   this. subscription = this.activatedRoute.params.subscribe(
-      (params: Params) => this.loadContent(params['kind'])
+   this. subscription = this.activatedRoute.params.subscribe(     // Um festzustellen, welcher Pfad im Top-Menü
+      (params: Params) => this.loadContent(params['kind'])        // gewählt ist und entsprechenden Inhalt zu laden.
     );
 
 
@@ -35,7 +40,7 @@ export class IngredientListComponent implements OnInit, OnDestroy {
     if (kind === 'Obst') {
       this.ingredientService.getFruitEntries().subscribe(
         (food: Food[]) => {
-          for(let key in food) {
+          for(let key in food) {                                // Übertragung des erhaltenen Arrays in lokale Variable
             this.foodEntries.push(food[key]);
           }
         }
@@ -60,6 +65,6 @@ export class IngredientListComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.subscription.unsubscribe();
+    this.subscription.unsubscribe();        // Unsubscribe um stacken von Subscriptions zu unterbinden.
   }
 }

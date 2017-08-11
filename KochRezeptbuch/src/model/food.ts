@@ -10,6 +10,7 @@ export class Food {
               public sugar: number,
               public vitaminb6: number,
               public vitaminc: number,
-              public picture: string) {
+              public picture: string,
+              public amount: number) {
   }
 }
