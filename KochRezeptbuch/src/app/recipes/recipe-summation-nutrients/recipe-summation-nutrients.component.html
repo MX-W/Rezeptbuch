@@ -1,3 +1,47 @@
-<p>
-  recipe-summation-nutrients works!
-</p>
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">Gesamte addierte Nährstoffe</h4>
+    <h6 class="card-subtitle text-muted">
+      Hier werden die Nährstoffe der in der Mitte abgelegten Zutaten aufaddiert
+    </h6>
+    <table>
+      <tr>
+        <td>Kohlenhydrate:</td>
+        <td>{{ addedNutrients?.carb }} mg</td>
+      </tr>
+      <tr>
+        <td>Energie:</td>
+        <td>{{ addedNutrients?.energy }} kcal</td>
+      </tr>
+      <tr>
+        <td>Fett:</td>
+        <td>{{ addedNutrients?.fat }} mg</td>
+      </tr>
+      <tr>
+        <td>Eiweiß:</td>
+        <td>{{ addedNutrients?.protein }} mg</td>
+      </tr>
+      <tr>
+        <td>Ballaststoffe:</td>
+        <td>{{ addedNutrients?.ruffage }} mg</td>
+      </tr>
+      <tr>
+        <td>Salz:</td>
+        <td>{{ addedNutrients?.salt }} mg</td>
+      </tr>
+      <tr>
+        <td>Vitamin B6:</td>
+        <td>{{ addedNutrients?.vitaminb6 }} μg</td>
+      </tr>
+      <tr>
+        <td>Vitamin C:</td>
+        <td>{{ addedNutrients?.vitaminc }} μg</td>
+      </tr>
+    </table>
+
+    <input type="text" placeholder="Rezeptname eingeben" #recipeName (focusout)="setRecipeName(recipeName.value)"/>
+
+    <button class="btn-success" (click)="recipeInDatabase()">Rezept speichern</button>
+
+  </div>
+</div>

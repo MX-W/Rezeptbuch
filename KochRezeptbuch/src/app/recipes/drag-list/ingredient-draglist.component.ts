@@ -21,7 +21,7 @@ export class IngredientDraglistComponent implements OnInit {
   constructor(private ingredientService: IngredientService,
               private dragulaService: DragulaService) {
     dragulaService.drop.subscribe((value) => {
-      this.ingredientService.ingredientInRecipeCheck.emit(this.midArray);
+      this.ingredientService.ingredientArrayInDrop.emit(this.midArray);
     })
     ;
   }

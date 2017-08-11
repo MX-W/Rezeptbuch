@@ -22,7 +22,6 @@ export class RecipeDetailComponent implements OnInit {
       if (this.isClicked === false) {
         for (let key in recipe.ingredients) {
           this.ingredients.push(recipe.ingredients[key]);
-          console.log(recipe.ingredients[key]);
         }
         this.isClicked = true;
       } else {

@@ -27,7 +27,7 @@ export class RecipeListComponent implements OnInit {
       }
     });
 
-    this.ingredientService.ingredientInRecipeCheck.subscribe((data) => {
+    this.ingredientService.ingredientArrayInDrop.subscribe((data) => {
       this.recipeDisplay = this.recipeService.checkIngredientInRecipe(this.recipeEntries, data);
     });
 
