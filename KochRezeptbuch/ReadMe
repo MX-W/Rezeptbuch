@@ -1,0 +1,10 @@
+Projektaufgabe Veggi-Datenbank
+  von Max Wendl und Christian Frank
+
+Unsere Seite zeigt die wichtigsten Informationen über verschiedenste Obst-/Gemüsesorten
+und durch den oberen Reiter werden diese Gruppen angezeigt.
+
+Mit dem linken "Side-Menu" kann man aus den Zutaten, den Rezepten und dem Loginbereicht wählen.
+Bei Rezepten werden alle Zutaten der Datenbank angezeigt. Diese können durch Drag n Drop einfach in die Mitte der Seite gezogen werden und repräsentieren den Bestand zu Hause.
+Je nachdem was man zu Hause hat, werden nun verschiedene Rezepte angeboten und die benötigten Zutaten.
+
