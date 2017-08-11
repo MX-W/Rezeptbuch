@@ -26,6 +26,7 @@ import { RecipeItemComponent } from './recipes/recipe-list/recipe-item.component
 import {IngredientService} from "../services/ingredients.service";
 import { RecipeDetailComponent } from './recipes/recipe-list/recipe-detail/recipe-detail.component';
 import {RecipeService} from "../services/recipe.service";
+import { RecipeSummationNutrientsComponent } from './recipes/recipe-summation-nutrients/recipe-summation-nutrients.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import {RecipeService} from "../services/recipe.service";
     IngredientComponent,
     IngredientDropitemComponent,
     RecipeItemComponent,
-    RecipeDetailComponent
+    RecipeDetailComponent,
+    RecipeSummationNutrientsComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +56,7 @@ import {RecipeService} from "../services/recipe.service";
     routing,
     DragulaModule
   ],
-  providers: [HttpService, DataService, IngredientService, RecipeService],
+  providers: [HttpService, DataService, IngredientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

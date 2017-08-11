@@ -1,3 +1,3 @@
-<div class="list-group-item">
-  <p class="list-group-item-text" *ngFor="let ingredient of recipe.ingredients">{{ingredient?.name}}   {{ingredient?.amount}}</p>
+<div class="list-group-item" *ngIf="isClicked">
+  <p class="list-group-item-text ingredient" *ngFor="let ingredient of ingredients">{{ingredient?.name}}  Menge: {{ingredient?.amount}}</p>
 </div>

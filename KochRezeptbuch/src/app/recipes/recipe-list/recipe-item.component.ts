@@ -9,7 +9,8 @@ import {RecipeService} from "../../../services/recipe.service";
       div {
         cursor: pointer;
       }
-  `]
+  `],
+  providers: [RecipeService]
 })
 export class RecipeItemComponent implements OnInit {
 
