@@ -13,7 +13,7 @@ a{
 }
 
 li a:hover {
-  background-color: #398439;
+  background-color: transparent;
 }
 
 .active a{
