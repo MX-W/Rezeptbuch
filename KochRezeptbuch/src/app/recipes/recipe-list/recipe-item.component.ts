@@ -1,18 +1,29 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Recipe} from "../../../model/recipe";
+import {RecipeService} from "../../../services/recipe.service";
 
 @Component({
   selector: 'app-recipe-item',
   templateUrl: './recipe-item.component.html',
-  styles: []
+  styles: [`
+      div {
+        cursor: pointer;
+      }
+  `]
 })
 export class RecipeItemComponent implements OnInit {
 
   @Input() private recipe: Recipe;
 
-  constructor() { }
+  private clicked = false;
+
+  constructor(private recipeService: RecipeService) { }
 
   ngOnInit() {
+  }
+
+  onClick() {
+    this.recipeService.recipeSelected.emit(this.recipe);
   }
 
 }

@@ -24,6 +24,7 @@ import {IngredientComponent} from "./ingredient/ingredient.component";
 import { IngredientDropitemComponent } from './recipes/drag-list/ingredient-dropitem.component';
 import { RecipeItemComponent } from './recipes/recipe-list/recipe-item.component';
 import {IngredientService} from "../services/ingredients.service";
+import { RecipeDetailComponent } from './recipes/recipe-list/recipe-detail/recipe-detail.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import {IngredientService} from "../services/ingredients.service";
     IngredientDragitemComponent,
     IngredientComponent,
     IngredientDropitemComponent,
-    RecipeItemComponent
+    RecipeItemComponent,
+    RecipeDetailComponent
   ],
   imports: [
     BrowserModule,

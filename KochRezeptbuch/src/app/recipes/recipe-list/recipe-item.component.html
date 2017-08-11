@@ -1,4 +1,4 @@
-<div class="list-group-item clearfix">
+<div class="list-group-item clearfix" (click)="onClick()">
 
   <div class="pull-left">
     <h4 class="list-group-item-heading">{{recipe.name}}</h4>
@@ -9,3 +9,4 @@
     <img [src]="recipe.picture" alt="bild" class="img-responsive" style="max-height: 50px;">
   </div>
 </div>
+<app-recipe-detail></app-recipe-detail>
