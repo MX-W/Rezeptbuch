@@ -5,8 +5,17 @@ ul.nav {
   padding: 5px;
   margin: 10px;
   width: 120px;
+  border-radius: 8px;
 }
 
 a{
   color: white;
+}
+
+li a:hover {
+  background-color: #398439;
+}
+
+.active a{
+  background-color: #449d44;
 }

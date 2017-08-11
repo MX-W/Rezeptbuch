@@ -17,11 +17,19 @@ export class RecipeService {
 
   checkIngredientInRecipe(recipes: Recipe[], ingredients: Food[]): Recipe[] {
     const recipesWithIngredient: Recipe[] = [];
+    let isInArray = false;
     for (let recipe in recipes) {
       for (let ingredient in recipes[recipe].ingredients) {
         for (let food in ingredients) {
           if (recipes[recipe].ingredients[ingredient].name === ingredients[food].name) {
-            recipesWithIngredient.push(recipes[recipe]);
+            for (let key in recipesWithIngredient) {
+              if (recipes[recipe].name === recipesWithIngredient[key].name) {
+                  isInArray = true;
+              }
+            }
+            if (isInArray === false) {
+              recipesWithIngredient.push(recipes[recipe]);
+            }
           }
         }
       }
