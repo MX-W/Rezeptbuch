@@ -12,3 +12,12 @@ Je nachdem was man zu Hause hat, werden nun verschiedene Rezepte angeboten und d
 Des Weiteren werden die addierten Inhaltsstoffe angegeben und man kann eigene Gerichte benennen und speichern (dafür muss man angemeldet sein)
 
 Der Loginbereich ist für registrierte Benutzer die Ihre gespeicherten Gerichte abrufen oder verändern wollen.
+
+------------------------------------------------------------------------------------------------------------------------
+Die wichtigsten Funktionen der Seite
+
+- Datenbankabfragen bei einer selbst erstellten Datenbank (firebase)
+- Drag n Drop der Zutaten in eine andere Liste
+- Berechnung der gesamten Zutaten
+- Speicherung neuer Gerichte in der Datenbank
+
